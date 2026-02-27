@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <!-- Try opening this file on your local computer in a web browser (Firefox, Chrome, etc). 
-     * On Windows, go to the browser and type control + o and browse to find this file to open it.
-     * On Mac, go to the browser and type command + o and browse to find this file to open it. 
-     Look for the text in the <title> element in the tab above the browser search bar. Do you see it? 
-    -->
     <head>
-        <!-- What's in the <head> element is NOT for display in a web browser! 
-            <head> stores "meta" information describing and setting up things ABOUT this HTML file. 
-            It holds important information about the website's contents. -->
-        <title>Resume - Abdulrahman</title>
-        <!-- The text inside the <title> element does show in the top tab of a web browser. 
-            The <head> is where we will include info about styling the site, too.-->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Here is a place where we can add a little styling code called CSS to this page. 
-            I used it to apply a background color to the body element.
-        -->
+        <title>Resume - Abadi</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
+    
     <body>
-        <!-- CONTENT FOR DISPLAY. The <body> element holds the content we see in the display window on the web browser.-->
+        
         <nav>
             <ul class="nav">
                 <li><a href="index.html">Home</a></li>
@@ -30,24 +18,39 @@
             </ul>
         </nav>
         
-        <h1>My Resume</h1>
+        <h1>Abdulrahman Alsahafi</h1>
+        <p class="tagline">Aircraft Avionics • Electrical Engineering student • Learning Web Development</p>
         
-        <h2>Education</h2>
-        <p>Penn State University — (Pursuing My Bachelor's Degree in Electrical Engineering)</p>
+        <section>
+            <h2>Education</h2>
+            <div class="card">
+                <h3>Penn State University</h3>
+                <p>Pursuing Bachelor’s Degree in Electrical Engineering</p>
+            </div>
+        </section>
         
-        <h3>Experience</h3>
-        <p>Aircraft Avionics Technician at SAMI Airlines -(2025)
-            Installed, upgraded, and tested avionics systems for improved performance.
-            Conducted functional tests and quality checks on avionics systems.</p>
+        <section>
+            <h2>Experience</h2>
+            <div class="card">
+                <h3>Aircraft Avionics Technician — SAMI Airlines (2025)</h3>
+                <ul>
+                    <li>Installed, upgraded, and tested avionics systems</li>
+                    <li>Performed functional tests and quality checks</li>
+                </ul>
+            </div>
+        </section>
         
-        <h2>Skills</h2>
-        <ul>
-            <li>Micrsoft Office</li>
-            <li>Problem Solving</li>
-            <li>Teamwork</li>
-        </ul>
+        <section>
+            <h2>Skills</h2>
+            <div class="card">
+                <ul class="skills">
+                    <li>Microsoft Office</li>
+                    <li>Teamwork</li>
+                    <li>Problem Solving</li>
+                    <li>HTML + GitHub</li>
+                </ul>
+            </div>
+        </section>
         
-        <img src="images/777x-hero.jpg" alt="Boeing airplane" width="500" />
-
     </body>
 </html>
