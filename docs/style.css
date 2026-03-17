@@ -95,3 +95,58 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+}
+
+/* Center content */
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #003366;
+  font-size: 36px;   /* smaller */
+  margin-bottom: 20px;
+}
+
+h1 {
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0055aa;
+}
+
+/* Paragraph styling */
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Add a card look */
+body {
+  background-color: #eef2f7;
+}
+
+p {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+}
