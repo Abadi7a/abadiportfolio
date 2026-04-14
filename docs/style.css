@@ -1,48 +1,48 @@
 body {
   margin: 0;
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+  padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f5f7fa;
   color: #111;
-  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
   text-align: center;
   color: #003366;
   font-size: 40px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 h2 {
   color: #003366;
-  margin-top: 25px;
+  margin-top: 30px;
   margin-bottom: 10px;
-}
-
-h3 {
-  margin-top: 15px;
-  margin-bottom: 8px;
 }
 
 nav {
   background: #d9e6f2;
-  padding: 12px;
+  padding: 15px;
   border-radius: 12px;
-  text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .nav {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav li {
+  display: inline;
 }
 
 .nav a {
@@ -55,76 +55,43 @@ nav {
   text-decoration: underline;
 }
 
-section {
-  margin-bottom: 25px;
+.section {
+  margin-bottom: 40px;
 }
 
 .card {
   background: white;
-  padding: 18px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
 }
 
 p {
+  line-height: 1.6;
   margin-bottom: 15px;
-}
-
-ul {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
-.gallery figure {
-  background: white;
-  padding: 12px;
-  border-radius: 12px;
-  width: 260px;
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-
-.gallery figcaption {
-  margin-top: 8px;
-  font-size: 0.9em;
-  color: #333;
 }
 
 img {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
+  display: block;
   margin: 15px auto;
-  display: block;
   border-radius: 10px;
 }
 
-iframe {
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 100%;
-}
-
-.tagline {
+figure {
   text-align: center;
-  background: #e6edf5;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 25px;
+}
+
+figcaption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #ccc;
 }

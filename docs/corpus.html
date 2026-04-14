@@ -1,113 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Corpus Analysis</title>
-        
-        <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      text-align: center;
-      background-color: #f9f9f9;
-    }
-
-    nav {
-      margin-bottom: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      margin: 0 10px;
-      color: #333;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #0077cc;
-    }
-
-    .section {
-      margin-bottom: 50px;
-    }
-
-    .image-box {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    img {
-      width: 100%;
-      max-width: 700px;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 10px;
-      transition: 0.3s;
-    }
-
-    img:hover {
-      transform: scale(1.05);
-    }
-
-    p {
-      max-width: 700px;
-      margin: 10px auto;
-      line-height: 1.6;
-    }
-
-    h2 {
-      margin-top: 20px;
-    }
-  </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
     
     <body>
         
-        <h1>Corpus Analysis</h1>
-        
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="corpus.html">Corpus</a>
-        </nav>
-        
-        <div class="section">
-            <p>
-                In this project, I compared old English texts from the 19th century with modern American English. 
-                I used Voyant Tools to see how word usage changes over time.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Word Cloud</h2>
-            <div class="image-box">
-                <img src="images/voyant-cloud.png" alt="Word Cloud">
-            </div>
+        <div class="container">
             
-            <p>
-                The word cloud shows the most common words in the texts. Words like "people," "like," and "know" appear often, especially in modern texts, which are more casual.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Trends</h2>
-            <div class="image-box">
-                <img src="images/voyant-trends.png" alt="Trends Graph">
-            </div>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="reflection.html">Reflection</a></li>
+                    <li><a href="analysis.html">Analysis</a></li>
+                    <li><a href="corpus.html">Corpus</a></li>
+                </ul>
+            </nav>
             
-            <p>
-                The trends graph shows how often certain words appear in each text. It helps compare older books with modern writing like blogs and spoken language.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Summary</h2>
-            <div class="image-box">
-                <img src="images/voyant-summary.png" alt="Summary Data">
-            </div>
+            <h1>Corpus Analysis</h1>
             
-            <p>
-                The results show that older texts use longer sentences and more complex words, while modern texts are simpler and easier to understand.
-            </p>
+            <section class="section">
+                <div class="card">
+                    <p>
+                        In this project, I compared English texts from the 19th century with modern American English. 
+                        I used Voyant Tools to see how language has changed over time.
+                    </p>
+                    
+                    <p>
+                        I also tried different tool settings, like looking at repeated words and phrases, 
+                        to better understand the differences between the texts.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <div class="card">
+                    <h2>Word Cloud</h2>
+                    
+                    <figure>
+                        <img src="images/voyant-cloud.png" alt="Word cloud showing most common words" />
+                        <figcaption><b>Figure 1:</b> Most common words in the texts.</figcaption>
+                    </figure>
+                    
+                    <p>
+                        The word cloud shows the words that appear the most. In modern texts, words like "people," "like," and "know" appear often. 
+                        This shows that modern writing is more casual and similar to everyday speech.
+                    </p>
+                    
+                    <p>
+                        Older texts use more formal and harder words. Compared to modern texts, they sound more serious and complex.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <div class="card">
+                    <h2>Trends</h2>
+                    
+                    <figure>
+                        <img src="images/voyant-trends.png" alt="Trends graph showing word frequency" />
+                        <figcaption><b>Figure 2:</b> How often words appear in each text.</figcaption>
+                    </figure>
+                    
+                    <p>
+                        The trends graph shows how often certain words are used. In modern texts, the same words repeat a lot, 
+                        which makes the writing easier to read.
+                    </p>
+                    
+                    <p>
+                        In older texts, there are more different words. This means the writing is more detailed and uses a wider vocabulary.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <div class="card">
+                    <h2>Keyword in Context (KWIC)</h2>
+                    
+                    <figure>
+                        <img src="images/voyant-summary.png" alt="KWIC example showing how words are used in sentences" />
+                        <figcaption><b>Figure 3:</b> Example of how a word is used in sentences.</figcaption>
+                    </figure>
+                    
+                    <p>
+                        The KWIC view shows how words are used in sentences. In modern texts, words like "like" are used in a relaxed way, 
+                        sometimes as filler words.
+                    </p>
+                    
+                    <p>
+                        In older texts, words are used more carefully and in longer sentences. This makes the writing feel more formal.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <div class="card">
+                    <h2>Conclusion</h2>
+                    
+                    <p>
+                        Overall, there is a clear difference between older and modern English.
+                    </p>
+                    
+                    <p>
+                        Older texts use longer sentences, harder words, and a more formal style.
+                    </p>
+                    
+                    <p>
+                        Modern English is simpler, shorter, and more like how people talk every day.
+                    </p>
+                    
+                    <p>
+                        This is probably because older texts were written for formal readers, while modern writing is often for quick communication, 
+                        like blogs or social media.
+                    </p>
+                </div>
+            </section>
+            
         </div>
         
     </body>
+    
 </html>
