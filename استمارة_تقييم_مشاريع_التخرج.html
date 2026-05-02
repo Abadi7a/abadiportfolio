@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استمارة تقييم مشروع التخرج - المسار الصحة والحياة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f6f1e6;
+  --cream-light: #fdfaf3;
+  --sage: #4a6b5c;
+  --sage-deep: #314539;
+  --sage-light: #8ba89a;
+  --rose: #b87a6b;
+  --rose-soft: #e9c9bf;
+  --gold: #c9a96e;
+  --text: #2a3a32;
+  --text-soft: #5e6e66;
+  --border: #e3dccb;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(58, 76, 65, 0.06);
+  --shadow-md: 0 8px 24px rgba(58, 76, 65, 0.08);
+  --shadow-lg: 0 16px 48px rgba(58, 76, 65, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.7;
+  background-image:
+    radial-gradient(circle at 15% 8%, rgba(184, 122, 107, 0.07) 0%, transparent 35%),
+    radial-gradient(circle at 85% 92%, rgba(74, 107, 92, 0.09) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 36px 20px 80px;
+}
+
+/* ---------- Header ---------- */
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+  padding: 56px 32px 44px;
+  background: var(--cream-light);
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--rose) 0%, var(--gold) 50%, var(--sage) 100%);
+}
+
+.header-decoration {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 22px;
+  display: block;
+}
+
+h1 {
+  font-family: 'El Messiri', serif;
+  font-size: clamp(1.55rem, 4.2vw, 2.35rem);
+  color: var(--sage-deep);
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.subtitle {
+  font-family: 'El Messiri', serif;
+  font-size: 1.1rem;
+  color: var(--rose);
+  font-weight: 500;
+  margin-bottom: 26px;
+  letter-spacing: 1.5px;
+}
+
+.subtitle::before, .subtitle::after {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--rose);
+  vertical-align: middle;
+  margin: 0 14px 4px;
+  opacity: 0.5;
+}
+
+.welcome {
+  background: linear-gradient(135deg, rgba(74, 107, 92, 0.05), rgba(184, 122, 107, 0.05));
+  padding: 22px 26px;
+  border-radius: 14px;
+  border-right: 3px solid var(--rose);
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.95;
+  text-align: right;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.welcome strong {
+  color: var(--sage-deep);
+  font-weight: 700;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 34px 32px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.section:hover { box-shadow: var(--shadow-md); }
+
+h2 {
+  font-family: 'El Messiri', serif;
+  font-size: 1.35rem;
+  color: var(--sage-deep);
+  margin-bottom: 22px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.section-icon {
+  width: 36px; height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(74, 107, 92, 0.12), rgba(184, 122, 107, 0.12));
+  border-radius: 11px;
+  font-size: 1.05rem;
+}
+
+.section-hint {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+  margin-top: -8px;
+  padding: 10px 14px;
+  background: rgba(201, 169, 110, 0.08);
+  border-radius: 10px;
+  border-right: 3px solid var(--gold);
+}
+
+/* ---------- Form fields ---------- */
+.field { margin-bottom: 18px; }
+.field:last-child { margin-bottom: 0; }
+
+.field-label {
+  display: block;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+}
+
+.required-mark {
+  color: var(--rose);
+  margin-right: 3px;
+  font-weight: 700;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1rem;
+  background: var(--cream-light);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(74, 107, 92, 0.1);
+}
+
+input[type="text"]::placeholder, textarea::placeholder {
+  color: #b0b8b3;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.8;
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* ---------- Project selection ---------- */
+.project-options { display: grid; gap: 12px; }
+
+.project-option {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.project-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: var(--cream-light);
+  transition: all 0.25s;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.project-option:hover .project-card {
+  border-color: var(--sage-light);
+  background: var(--white);
+  transform: translateX(-3px);
+}
+
+.project-option input[type="radio"]:checked + .project-card {
+  border-color: var(--sage);
+  background: linear-gradient(135deg, rgba(74, 107, 92, 0.07), rgba(201, 169, 110, 0.05));
+  box-shadow: var(--shadow-sm);
+}
+
+.project-option input[type="radio"]:focus-visible + .project-card {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+.radio-circle {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  background: var(--white);
+}
+
+.project-option input[type="radio"]:checked + .project-card .radio-circle {
+  border-color: var(--sage);
+}
+
+.project-option input[type="radio"]:checked + .project-card .radio-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--sage);
+  animation: pop 0.25s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ---------- Rating scale ---------- */
+.rating-question {
+  padding: 22px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.rating-question:first-of-type { padding-top: 8px; }
+.rating-question:last-of-type { border-bottom: none; padding-bottom: 8px; }
+
+.rating-question-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: var(--text);
+  font-size: 1.01rem;
+  line-height: 1.6;
+}
+
+.q-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px; height: 30px;
+  background: linear-gradient(135deg, var(--sage), var(--sage-deep));
+  color: var(--cream-light);
+  border-radius: 9px;
+  font-family: 'El Messiri', serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.rating-scale {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.scale-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  text-align: center;
+  min-width: 48px;
+}
+
+.scale-label.weak { color: var(--rose); }
+.scale-label.excellent { color: var(--sage); }
+
+.rating-options {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.rating-option {
+  position: relative;
+  flex: 1;
+  max-width: 56px;
+}
+
+.rating-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rating-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 50px;
+  margin: 0 auto;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  background: var(--cream-light);
+  cursor: pointer;
+  font-family: 'El Messiri', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  transition: all 0.22s;
+  user-select: none;
+}
+
+.rating-option:hover .rating-circle {
+  border-color: var(--sage-light);
+  transform: scale(1.08);
+  color: var(--sage-deep);
+}
+
+.rating-option input[type="radio"]:checked + .rating-circle {
+  background: linear-gradient(135deg, var(--sage), var(--sage-deep));
+  border-color: var(--sage-deep);
+  color: var(--cream-light);
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(74, 107, 92, 0.28);
+}
+
+.rating-option input[type="radio"]:focus-visible + .rating-circle {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+/* ---------- Submit ---------- */
+.submit-area {
+  text-align: center;
+  margin-top: 36px;
+  padding: 0 8px;
+}
+
+.submit-btn {
+  font-family: 'El Messiri', serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+  padding: 16px 60px;
+  background: linear-gradient(135deg, var(--sage-deep), var(--sage));
+  color: var(--cream-light);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.submit-btn:active:not(:disabled) { transform: translateY(0); }
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.submit-hint {
+  margin-top: 14px;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+/* ---------- Success ---------- */
+.success-screen {
+  display: none;
+  text-align: center;
+  padding: 64px 32px;
+  background: var(--cream-light);
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.success-screen::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--sage), var(--gold), var(--rose));
+}
+
+.success-screen.visible {
+  display: block;
+  animation: fadeUp 0.5s ease-out;
+}
+
+.success-icon {
+  width: 84px; height: 84px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, var(--sage), var(--sage-deep));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream-light);
+  box-shadow: 0 8px 20px rgba(74, 107, 92, 0.3);
+}
+
+.success-icon svg { width: 40px; height: 40px; }
+
+.success-screen h2 {
+  border: none;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.success-message {
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.85;
+}
+
+.evaluate-another-btn {
+  font-family: 'El Messiri', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 40px;
+  background: var(--white);
+  color: var(--sage-deep);
+  border: 1.5px solid var(--sage);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.22s;
+}
+
+.evaluate-another-btn:hover {
+  background: var(--sage);
+  color: var(--cream-light);
+  transform: translateY(-1px);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  padding: 28px 16px 8px;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  margin-top: 28px;
+}
+
+.footer-line {
+  display: inline-block;
+  height: 1px;
+  width: 36px;
+  background: var(--border);
+  vertical-align: middle;
+  margin: 0 12px;
+}
+
+/* ---------- Error ---------- */
+.error-msg {
+  background: var(--rose-soft);
+  color: #7a3a30;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  display: none;
+  font-weight: 500;
+  border-right: 3px solid var(--rose);
+}
+
+.error-msg.visible {
+  display: block;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .container { padding: 18px 12px 60px; }
+  .header { padding: 44px 20px 32px; }
+  .section { padding: 26px 18px; }
+  h2 { font-size: 1.2rem; }
+  .rating-options { gap: 4px; }
+  .rating-circle { font-size: 0.95rem; max-width: 40px; }
+  .scale-label { min-width: 40px; font-size: 0.74rem; }
+  .rating-scale { gap: 6px; }
+  .submit-btn { padding: 14px 40px; font-size: 1.05rem; }
+  .welcome { padding: 18px 20px; font-size: 0.95rem; }
+}
+
+@media (max-width: 380px) {
+  .rating-circle { max-width: 36px; font-size: 0.88rem; }
+  .scale-label { min-width: 36px; font-size: 0.7rem; }
+}
+
+/* ---------- Animations ---------- */
+.section { animation: fadeUp 0.5s ease-out backwards; }
+.section:nth-of-type(1) { animation-delay: 0.05s; }
+.section:nth-of-type(2) { animation-delay: 0.15s; }
+.section:nth-of-type(3) { animation-delay: 0.25s; }
+.section:nth-of-type(4) { animation-delay: 0.35s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <svg class="header-decoration" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <!-- stem -->
+      <path d="M32 40 L32 58" stroke="#4a6b5c" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+      <!-- side leaves -->
+      <path d="M14 36 C 14 36, 20 28, 28 32 C 26 40, 18 42, 14 36 Z" fill="#4a6b5c" opacity="0.45"/>
+      <path d="M50 36 C 50 36, 44 28, 36 32 C 38 40, 46 42, 50 36 Z" fill="#4a6b5c" opacity="0.45"/>
+      <!-- top petal -->
+      <path d="M32 6 C 24 14, 22 24, 26 32 C 28 36, 32 38, 32 38 C 32 38, 36 36, 38 32 C 42 24, 40 14, 32 6 Z" fill="#b87a6b" opacity="0.55"/>
+      <!-- center -->
+      <circle cx="32" cy="30" r="3.5" fill="#c9a96e" opacity="0.85"/>
+    </svg>
+    <h1>استمارة تقييم مشروع التخرج</h1>
+    <div class="subtitle">المسار الصحة والحياة</div>
+    <div class="welcome">
+      شكرًا لزيارتكِ عزيزتي، ويُسعدنا تقييمكِ لمشروعنا وتدوين ملاحظاتكِ 🌷
+      <br>
+      <strong>خريجات المسار الصحة والحياة</strong> — بإشراف الأستاذة / عزة الثقفي
+    </div>
+  </header>
+
+  <!-- ===== Form ===== -->
+  <form id="evaluationForm" novalidate>
+    <div class="error-msg" id="errorMsg"></div>
+
+    <!-- Section 1: Evaluator Info -->
+    <section class="section">
+      <h2><span class="section-icon">🧾</span> بيانات المُقيِّم</h2>
+      <div class="field">
+        <label class="field-label" for="name">الاسم (اختياري)</label>
+        <input type="text" id="name" name="name" placeholder="اكتبي اسمكِ الكريم">
+      </div>
+      <div class="field">
+        <label class="field-label" for="title">المسمى الوظيفي / التخصص <span class="required-mark">*</span></label>
+        <input type="text" id="title" name="title" required placeholder="مثال: طالبة، معلمة، اختصاصية تغذية...">
+      </div>
+    </section>
+
+    <!-- Section 2: Project Selection -->
+    <section class="section">
+      <h2><span class="section-icon">📌</span> اسم المشروع <span class="required-mark">*</span></h2>
+      <div class="project-options" id="projectOptions"></div>
+    </section>
+
+    <!-- Section 3: Rating Criteria -->
+    <section class="section">
+      <h2><span class="section-icon">⭐</span> معايير التقييم</h2>
+      <p class="section-hint">يرجى اختيار التقييم المناسب لكل معيار من <strong>١ (ضعيف)</strong> إلى <strong>٥ (ممتاز)</strong> — جميع الأسئلة إلزامية</p>
+      <div id="ratingQuestions"></div>
+    </section>
+
+    <!-- Section 4: Open-ended -->
+    <section class="section">
+      <h2><span class="section-icon">💬</span> أسئلة مفتوحة</h2>
+      <div class="field">
+        <label class="field-label" for="positive">ملاحظات إيجابية أخرى</label>
+        <textarea id="positive" name="positive" rows="4" placeholder="شاركينا أي ملاحظة إيجابية تودّين إضافتها..."></textarea>
+      </div>
+      <div class="field">
+        <label class="field-label" for="word">كلمة أخيرة تُثري مشروعنا</label>
+        <textarea id="word" name="word" rows="4" placeholder="كلمة أخيرة تُلهمنا وتُثري عملنا..."></textarea>
+      </div>
+    </section>
+
+    <div class="submit-area">
+      <button type="submit" class="submit-btn" id="submitBtn">إرسال التقييم</button>
+      <div class="submit-hint">يمكنكِ تعبئة الاستمارة لأكثر من مشروع 💚</div>
+    </div>
+  </form>
+
+  <!-- ===== Success Screen ===== -->
+  <div class="success-screen" id="successScreen">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h2>شكرًا جزيلاً لكِ 🌷</h2>
+    <p class="success-message">
+      تم استلام تقييمكِ بنجاح، ونعتزّ بكلماتكِ الطيبة وملاحظاتكِ القيّمة التي ستُثري مشاريعنا.
+    </p>
+    <button class="evaluate-another-btn" id="evaluateAnotherBtn">تقييم مشروع آخر</button>
+  </div>
+
+  <div class="footer">
+    <span class="footer-line"></span>
+    خريجات المسار الصحة والحياة
+    <span class="footer-line"></span>
+  </div>
+</div>
+
+<script>
+// ===== Data =====
+const projects = [
+  'أهمية الإسعافات الأولية والحد من المضاعفات الصحية',
+  'الخلايا الجذعية في طب التجديد',
+  'تأثير السلوك البشري على انتقال العدوى'
+];
+
+const criteria = [
+  'وضوح الفهم العلمي للموضوع',
+  'مدى عمق المحتوى',
+  'التوسع في المعلومات وربطها بالمجال الصحي',
+  'التحليل والتفسير',
+  'القدرة على شرح وربط الأفكار بشكل منطقي',
+  'استخدام أمثلة واقعية أو تطبيق عملي',
+  'تقديم حلول أو توصيات مفيدة',
+  'تنظيم المشروع (ترتيب وتسلسل الأفكار)',
+  'جودة العرض والتقديم (وضوح الإلقاء واستخدام الوسائل التعليمية)',
+  'الالتزام بالوقت المحدد'
+];
+
+const arabicNumerals = ['١','٢','٣','٤','٥','٦','٧','٨','٩','١٠'];
+
+// ===== Build dynamic content =====
+function buildProjectOptions() {
+  const container = document.getElementById('projectOptions');
+  container.innerHTML = projects.map((p, i) => `
+    <label class="project-option">
+      <input type="radio" name="project" value="${escapeHtml(p)}" required>
+      <div class="project-card">
+        <span class="radio-circle"></span>
+        <span>${escapeHtml(p)}</span>
+      </div>
+    </label>
+  `).join('');
+}
+
+function buildRatingQuestions() {
+  const container = document.getElementById('ratingQuestions');
+  container.innerHTML = criteria.map((c, idx) => {
+    const num = idx + 1;
+    const arNum = arabicNumerals[idx];
+    return `
+      <div class="rating-question">
+        <div class="rating-question-text">
+          <span class="q-number">${arNum}</span>
+          <span>${escapeHtml(c)} <span class="required-mark">*</span></span>
+        </div>
+        <div class="rating-scale">
+          <span class="scale-label weak">ضعيف</span>
+          <div class="rating-options">
+            ${[1,2,3,4,5].map(v => `
+              <label class="rating-option">
+                <input type="radio" name="q${num}" value="${v}" required aria-label="${arabicNumerals[v-1]} من ٥">
+                <div class="rating-circle">${arabicNumerals[v-1]}</div>
+              </label>
+            `).join('')}
+          </div>
+          <span class="scale-label excellent">ممتاز</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ===== Form handling =====
+const form = document.getElementById('evaluationForm');
+const submitBtn = document.getElementById('submitBtn');
+const errorMsg = document.getElementById('errorMsg');
+const successScreen = document.getElementById('successScreen');
+const evaluateAnotherBtn = document.getElementById('evaluateAnotherBtn');
+
+function showError(text) {
+  errorMsg.textContent = text;
+  errorMsg.classList.add('visible');
+  errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  setTimeout(() => errorMsg.classList.remove('visible'), 6000);
+}
+
+function validateForm() {
+  // Title required
+  const title = form.title.value.trim();
+  if (!title) {
+    showError('يرجى تعبئة المسمى الوظيفي / التخصص.');
+    form.title.focus();
+    return false;
+  }
+  // Project required
+  const projectChosen = form.querySelector('input[name="project"]:checked');
+  if (!projectChosen) {
+    showError('يرجى اختيار اسم المشروع.');
+    return false;
+  }
+  // All ratings required
+  for (let i = 1; i <= criteria.length; i++) {
+    const r = form.querySelector(`input[name="q${i}"]:checked`);
+    if (!r) {
+      showError(`يرجى تقييم جميع المعايير — لم يتم تقييم المعيار رقم ${arabicNumerals[i-1]}.`);
+      return false;
+    }
+  }
+  return true;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errorMsg.classList.remove('visible');
+
+  if (!validateForm()) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'جارٍ الإرسال...';
+
+  // Collect data
+  const formData = new FormData(form);
+  const data = {
+    timestamp: new Date().toISOString(),
+    name: (formData.get('name') || '').trim() || 'بدون اسم',
+    title: formData.get('title').trim(),
+    project: formData.get('project'),
+    ratings: {},
+    positive: (formData.get('positive') || '').trim(),
+    word: (formData.get('word') || '').trim()
+  };
+  for (let i = 1; i <= criteria.length; i++) {
+    data.ratings[`q${i}`] = parseInt(formData.get(`q${i}`), 10);
+  }
+
+  // Save to persistent shared storage so all responses are collected
+  const id = `evaluation:${Date.now()}:${Math.random().toString(36).slice(2, 8)}`;
+  try {
+    if (window.storage && typeof window.storage.set === 'function') {
+      await window.storage.set(id, JSON.stringify(data), true);
+    } else {
+      // graceful fallback: keep in memory only
+      window.__localResponses = window.__localResponses || [];
+      window.__localResponses.push(data);
+    }
+    showSuccess();
+  } catch (err) {
+    console.error(err);
+    showError('عذرًا، حدث خطأ أثناء حفظ التقييم. يرجى المحاولة مرة أخرى.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'إرسال التقييم';
+  }
+});
+
+function showSuccess() {
+  form.style.display = 'none';
+  successScreen.classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+evaluateAnotherBtn.addEventListener('click', () => {
+  form.reset();
+  form.style.display = 'block';
+  successScreen.classList.remove('visible');
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'إرسال التقييم';
+  errorMsg.classList.remove('visible');
+  // Re-trigger animations
+  document.querySelectorAll('.section').forEach(s => {
+    s.style.animation = 'none';
+    s.offsetHeight; // force reflow
+    s.style.animation = '';
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== Init =====
+buildProjectOptions();
+buildRatingQuestions();
+</script>
+</body>
+</html>
